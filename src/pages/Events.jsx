@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import EventsList from "../components/EventsList";
 
 function EventsPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -23,15 +24,15 @@ function EventsPage() {
     fetchEvents();
   }, []);
 
-  console.log(fetchedEvents);
-
   return (
     <>
       <div style={{ textAlign: "center" }}>
         {isLoading && <p>Loading...</p>}
         {error && <p>{error}</p>}
       </div>
-      {!isLoading && fetchedEvents && <p>Success</p>}
+      {!isLoading && fetchedEvents && (
+        <EventsList events={fetchedEvents.events} />
+      )}
     </>
   );
 }

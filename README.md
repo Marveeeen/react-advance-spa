@@ -11,3 +11,4 @@ A simple SPA website build with [Vite](https://github.com/vitejs/vite) for initi
 
 - loader in createBrowserRouter
 - best practice of using useLoaderData
+- useNavigation state

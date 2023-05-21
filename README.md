@@ -10,5 +10,10 @@ A simple SPA website build with [Vite](https://github.com/vitejs/vite) for initi
 ## Lessons Learned:
 
 - loader in createBrowserRouter
-- best practice of using useLoaderData
-- useNavigation state
+- best practice of handling fetch data with loader
+- best practice of handling actions using react-router-dom
+- proper error handling
+- proper nested pages with loader
+- React router dom hooks (useNavigation, useError, useLoaderData, useRouteLoaderData, useSubmit)
+- React router dom utility (json, redirect, defer)
+- React router dom component (Form, Await)

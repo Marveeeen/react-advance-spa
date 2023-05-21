@@ -28,7 +28,6 @@ function MainNavigation() {
           </li>
         </ul>
       </nav>
-      <NewsletterSignup />
     </header>
   );
 }

@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
+import NewsletterSignup from "./NewsletterSignup";
 
 function MainNavigation() {
   const activeHandler = ({ isActive }) =>
@@ -20,8 +21,14 @@ function MainNavigation() {
               Events
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/newsletter" className={activeHandler}>
+              Newsletter
+            </NavLink>
+          </li>
         </ul>
       </nav>
+      <NewsletterSignup />
     </header>
   );
 }

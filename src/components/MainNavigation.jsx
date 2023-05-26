@@ -22,7 +22,7 @@ function MainNavigation() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/auth" className={activeHandler}>
+            <NavLink to="/auth?mode=login" className={activeHandler}>
               Authentication
             </NavLink>
           </li>

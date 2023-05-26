@@ -22,12 +22,13 @@ function MainNavigation() {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/newsletter" className={activeHandler}>
-              Newsletter
+            <NavLink to="/auth" className={activeHandler}>
+              Authentication
             </NavLink>
           </li>
         </ul>
       </nav>
+      <NewsletterSignup />
     </header>
   );
 }

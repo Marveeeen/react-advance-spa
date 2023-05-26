@@ -1,26 +1,36 @@
-import { Form, useActionData } from "react-router-dom";
+import { useState } from "react";
 import classes from "./NewsletterSignup.module.css";
-import { useEffect } from "react";
 
 function NewsletterSignup() {
-  const data = useActionData();
+  const [email, setEmail] = useState("");
 
-  useEffect(() => {
-    if (data?.message) {
-      window.alert(data.message);
-    }
-  }, [data]);
+  const emailChangeHandler = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const signupSubmitHandler = (event) => {
+    event.preventDefault();
+    window.alert(`Sign up successfully: ${email}`);
+    setEmail("");
+  };
 
   return (
-    <Form method="post" className={classes.newsletter}>
+    <form
+      method="post"
+      className={classes.newsletter}
+      onSubmit={signupSubmitHandler}
+    >
       <input
         type="email"
         name="email"
         placeholder="Sign up for newsletter..."
         aria-label="Sign up for newsletter"
+        value={email}
+        onChange={emailChangeHandler}
+        required
       />
       <button>Sign up</button>
-    </Form>
+    </form>
   );
 }
 

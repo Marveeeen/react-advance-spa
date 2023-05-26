@@ -41,6 +41,8 @@ The application implements token-based authentication to secure the authenticati
 - proper error handling
 - proper nested pages with loader
 - authentication (JWT token)
+- route protection
+- automatic logout when the token expires
 - React router dom hooks (useNavigation, useError, useLoaderData, useRouteLoaderData, useSubmit, useParams)
 - React router dom utility (json, redirect, defer)
 - React router dom component (Form, Await)

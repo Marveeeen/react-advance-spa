@@ -1,8 +1,11 @@
-import { json, redirect } from "react-router-dom";
+import { json, redirect, useSearchParams } from "react-router-dom";
 import AuthForm from "../components/AuthForm";
 
 function AuthenticationPage() {
-  return <AuthForm />;
+  const [searchParams] = useSearchParams();
+  const isLogin = searchParams.get("mode") === "login";
+
+  return <AuthForm isLogin={isLogin} key={isLogin ? "login" : "signup"} />;
 }
 
 export default AuthenticationPage;
@@ -36,6 +39,11 @@ export async function action({ request }) {
   if (!response.ok) {
     throw json({ message: "Could not authenticate user." }, { status: 500 });
   }
+
+  const resData = await response.json();
+  const token = resData.token;
+
+  localStorage.setItem("token", token);
 
   // soon: manage that token
   return redirect("/");
